@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+/* Global and basic styles resets */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  background-color: whitesmoke;
+  max-width: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bangers', cursive;
+}
+
+.layer {
+  display: none;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Bangers', cursive;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bangers', cursive;
+  z-index: 100;
+  display: block;
+}
+
+.top-60 {
+  display: none;
+  top: 60%;
+}
