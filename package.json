@@ -1,11 +1,11 @@
 {
   "name": "jsgame",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "author": "Zeeshan-2k1 <ashraf2k1zeeshan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build && nodemon server.js",
+    "start": "yarn dev && nodemon server.js",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },

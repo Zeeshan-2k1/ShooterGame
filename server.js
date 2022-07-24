@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
     path = 'index.html';
   }
 
-  const file = __dirname + '/build/' + path;
+  const file = __dirname + '/dist/' + path;
   fs.readFile(file, (err, content) => {
     if (err) {
       console.log('File not found');
