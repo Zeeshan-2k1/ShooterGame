@@ -13,6 +13,12 @@ class InputHandler {
         this.game.player.shootTop();
       } else if (e.key === 'd') {
         this.game.debug = !this.game.debug;
+      } else if (e.key === 's') {
+        this.game.startGame();
+      } else if (e.key === 'r') {
+        if (this.game.gameOver) {
+          this.game.restartGame();
+        }
       }
     });
 

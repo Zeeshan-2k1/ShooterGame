@@ -19,6 +19,15 @@ class UI {
     context.fillText('Score: ' + this.game.score, 20, 40);
     context.fillText(`Timer: ${formattedTime(this.game.gameTime)}`, 20, 100);
 
+    if (!this.game.isGameStarted) {
+      context.font = '55px ' + this.fontFamily;
+      context.fillText(
+        "Press 'S' to start",
+        this.game.width * 0.35,
+        this.game.height * 0.5
+      );
+    }
+
     if (this.game.gameOver) {
       context.textAlign = 'center';
       let message1;
@@ -41,6 +50,12 @@ class UI {
         message2,
         this.game.width * 0.5,
         this.game.height * 0.5 + 20
+      );
+      context.font = '55px ' + this.fontFamily;
+      context.fillText(
+        "Press 'R' to restart",
+        this.game.width * 0.5,
+        this.game.height * 0.5 + 120
       );
     }
 

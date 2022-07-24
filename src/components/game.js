@@ -22,6 +22,7 @@ class Game {
     this.ui = new UI(this);
     this.background = new Background(this);
     this.sound = new SoundController(this);
+    this.isGameStarted = false;
     this.keys = [];
     this.enemies = [];
     this.particles = [];
@@ -41,12 +42,49 @@ class Game {
     this.debug = false;
   }
 
+  startGame() {
+    this.isGameStarted = true;
+  }
+
+  restartGame() {
+    delete this.player;
+    delete this.input;
+    delete this.ui;
+    delete this.background;
+    delete this.sound;
+
+    this.player = new Player(this);
+    this.input = new InputHandler(this);
+    this.ui = new UI(this);
+    this.background = new Background(this);
+    this.sound = new SoundController(this);
+    this.isGameStarted = true;
+    this.keys = [];
+    this.enemies = [];
+    this.particles = [];
+    this.explosions = [];
+    this.ammo = 20;
+    this.maxAmmo = 50;
+    this.ammoTimer = 0;
+    this.ammoInterval = 300;
+    this.enemyTimer = 0;
+    this.enemyInterval = 500;
+    this.gameOver = false;
+    this.score = 0;
+    this.winningScore = 300;
+    this.gameTime = 0;
+    this.timeLimit = 60000;
+    this.layerSpeed = 1;
+  }
+
   update(deltaTime) {
     // background
     this.background.update();
 
     // player update
     this.player.updatePosition(deltaTime);
+
+    if (!this.isGameStarted) return;
 
     // game time
     if (!Number.isNaN(deltaTime) && !this.gameOver) this.gameTime += deltaTime;
